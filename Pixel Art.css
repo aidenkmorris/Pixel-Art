@@ -1,0 +1,148 @@
+button
+{
+	font-family: Florence, cursive;
+	width: 95px;
+	height: 60px;
+	font-weight: bold;
+	font-size: 100%;
+	border-radius: 30px;
+	margin: 5px;
+	padding: 1px;
+	letter-spacing: 1px;
+}
+
+body
+{
+	background-color: #ffffff;
+	font-family: "Courier New", Courier, monospace;
+	color: #000000;
+	text-align: center;
+	line-height: 10px;
+}
+
+h1
+{
+	font-size: 4em;
+}
+
+p
+{
+	font-size: 1.5em;
+}
+
+#erase
+{
+	color: #ffffff;
+	background-color: #ff5757;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#fill
+{
+	color: #ffffff;
+	background-color: #000000;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#custom
+{
+	color: #ffffff;
+	background-color: #000000;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#customize
+{
+	color: #ffffff;
+	background-color: #42f57e;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#sizeButton
+{
+	color: #ffffff;
+	background-color: #47afff;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#red
+{
+	color: #ffffff;
+	background-color: #f00000;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#orange
+{
+	color: #ffffff;
+	background-color: #f07800;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#yellow
+{
+	color: #ffffff;
+	background-color: #f0f000;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#green
+{
+	color: #ffffff;
+	background-color: #00f000;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#blue
+{
+	color: #ffffff;
+	background-color: #0000f0;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#purple
+{
+	color: #ffffff;
+	background-color: #9000a6;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#pink
+{
+	color: #ffffff;
+	background-color: #ed00b6;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#brown
+{
+	color: #ffffff;
+	background-color: #471b00;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#white
+{
+	color: #000000;
+	background-color: #ffffff;
+}
+
+#lgray
+{
+	color: #ffffff;
+	background-color: #999999;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#gray
+{
+	color: #ffffff;
+	background-color: #696969;
+	text-shadow: 0px 0px 5px #000000;
+}
+
+#black
+{
+	color: #ffffff;
+	background-color: #000000;
+}

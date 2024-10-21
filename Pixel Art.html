@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+	<head>
+		<title>PIXEL ART</title>
+		<link rel = "stylesheet" href = "Pixel Art.css">
+	</head>
+	<body>
+		<article>
+			<h1>Paint Pixel Art</h1>
+			<p>Select your color:</p>
+			<button id = "red" onclick = 'set("#f00000")'>Red</button>
+			<button id = "orange" onclick = 'set("#f07800")'>Orange</button>
+			<button id = "yellow"onclick = 'set("#f0f000")'>Yellow</button>
+			<button id = "green" onclick = 'set("#00f000")'>Green</button>
+			<button id = "blue" onclick = 'set("#0000f0")'>Blue</button>
+			<button id = "purple" onclick = 'set("#9000a6")'>Purple</button><br>
+			<button id = "pink" onclick = 'set("#ed00b6")'>Pink</button>
+			<button id = "brown" onclick = 'set("#471b00")'>Brown</button>
+			<button id = "white" onclick = 'set("#ffffff")'>White</button>
+			<button id = "lgray" onclick = 'set("#999999")'>Gray</button>
+			<button id = "gray" onclick = 'set("#696969")'>Gray</button>
+			<button id = "black" onclick = 'set("#000000")'>Black</button>
+		</article>
+		<canvas id = "canv" width = "500px" height = "500x" style = "border: 1px solid black"></canvas>
+		<article>
+			<button id = "erase" onclick = 'erase()'>Clear</button>
+			<button id = "fill" onclick = 'fillBG()'>Fill</button>
+			<button id = "custom" onclick = 'set(cColor)'>Custom</button>
+			<button id = "customize" onclick = 'setCustom()'>Customize</button>
+			<button id = "sizeButton" onclick = 'setSize()'>Size</button>
+		</article>
+		<script>
+			var color = "#000000";
+			var cColor = "#000000";
+			
+			var pixelSize = 50;
+			
+			var canv = document.getElementById("canv");
+			var ctx = canv.getContext("2d");
+			var fill = document.getElementById("fill");
+			
+			function set(hex)
+			{
+				color = hex;
+				fill.style.backgroundColor = hex;
+			}
+			
+			function getMousePos()
+			{
+				var rect = canv.getBoundingClientRect();
+				return {
+					x: event.clientX - rect.left,
+					y: event.clientY - rect.top
+				};
+			}
+		
+			function draw()
+			{
+				var pos = getMousePos();
+				
+				x = Math.floor(pos.x / pixelSize) * pixelSize + 1;
+				y = Math.floor(pos.y / pixelSize) * pixelSize + 1;
+				
+				ctx.fillStyle = color;
+				ctx.fillRect(x, y, pixelSize, pixelSize);
+			}
+			
+			function erase()
+			{
+				ctx.clearRect(0, 0, canv.width, canv.height);
+			}
+		
+			function fillBG()
+			{
+				ctx.fillStyle = color;
+				ctx.fillRect(0, 0, 500, 500);
+			}
+			
+			function setCustom()
+			{
+				var colorElement = document.getElementById("custom");
+				cColor = String(prompt("Enter your custom color (HEX):"));
+				colorElement.style.backgroundColor = cColor;
+			}
+			
+			function setSize()
+			{
+				var canvasSize = String(prompt("Enter your pixel size (xs, s, m, l, xl):")); /* 25, 20, 10, 5, 4*/
+				
+				switch(canvasSize)
+				{
+					case "xs":
+						pixelSize = 20;
+						break;
+					case "s":
+						pixelSize = 25;
+						break;
+					case "m":
+						pixelSize = 50;
+						break;
+					case "l":
+						pixelSize = 100;
+						break;
+					case "xl":
+						pixelSize = 125;
+						break;
+					default:
+						pixelSize = 50;
+				};
+			}
+			
+			canv.addEventListener("mousedown", draw, false);
+		</script>
+	</body>
+</html>
