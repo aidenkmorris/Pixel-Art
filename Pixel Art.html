@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<title>PIXEL ART</title>
-		<link rel = "stylesheet" href = "Pixel Art.css">
+		<link rel = "stylesheet" href = "Pixel-Art.css">
 	</head>
 	<body>
 		<article>
@@ -30,14 +30,14 @@
 			<button id = "sizeButton" onclick = 'setSize()'>Size</button>
 		</article>
 		<script>
-			var color = "#000000";
-			var cColor = "#000000";
+			let color = "#000000";
+			let cColor = "#000000";
 			
-			var pixelSize = 50;
+			let pixelSize = 50;
 			
-			var canv = document.getElementById("canv");
-			var ctx = canv.getContext("2d");
-			var fill = document.getElementById("fill");
+			let canv = document.getElementById("canv");
+			let ctx = canv.getContext("2d");
+			let fill = document.getElementById("fill");
 			
 			function set(hex)
 			{
@@ -45,21 +45,21 @@
 				fill.style.backgroundColor = hex;
 			}
 			
-			function getMousePos()
+			function getMousePos(event)
 			{
-				var rect = canv.getBoundingClientRect();
+				let rect = canv.getBoundingClientRect();
 				return {
 					x: event.clientX - rect.left,
 					y: event.clientY - rect.top
 				};
 			}
 		
-			function draw()
+			function draw(event)
 			{
-				var pos = getMousePos();
+				let pos = getMousePos(event);
 				
-				x = Math.floor(pos.x / pixelSize) * pixelSize + 1;
-				y = Math.floor(pos.y / pixelSize) * pixelSize + 1;
+				let x = Math.floor(pos.x / pixelSize) * pixelSize + 1;
+				let y = Math.floor(pos.y / pixelSize) * pixelSize + 1;
 				
 				ctx.fillStyle = color;
 				ctx.fillRect(x, y, pixelSize, pixelSize);
@@ -78,14 +78,14 @@
 			
 			function setCustom()
 			{
-				var colorElement = document.getElementById("custom");
-				cColor = String(prompt("Enter your custom color (HEX):"));
+				let colorElement = document.getElementById("custom");
+				cColor = "#" + String(prompt("Enter your custom color (HEX):"));
 				colorElement.style.backgroundColor = cColor;
 			}
 			
 			function setSize()
 			{
-				var canvasSize = String(prompt("Enter your pixel size (xs, s, m, l, xl):")); /* 25, 20, 10, 5, 4*/
+				let canvasSize = String(prompt("Enter your pixel size (xs, s, m, l, xl):")); /* 25, 20, 10, 5, 4*/
 				
 				switch(canvasSize)
 				{
